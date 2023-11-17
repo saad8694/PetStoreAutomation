@@ -49,6 +49,19 @@ public class UserTests2 {
 		response.then().log().all();
 
 		Assert.assertEquals(response.getStatusCode(), 200);
+		
+		// Assert additional details in the response body
+        int code = response.jsonPath().getInt("code");
+        String type = response.jsonPath().getString("type");
+        //String message = response.jsonPath().getString("message");
+
+        int idFromPayload = userPayload.getId();
+        String messageFromResponse = response.jsonPath().getString("message");
+        
+        Assert.assertEquals(code, 200, "Incorrect status code");
+        Assert.assertEquals(type, "unknown", "Incorrect type");
+        Assert.assertEquals(messageFromResponse, String.valueOf(idFromPayload), "Incorrect user ID in the response");
+
 
 		logger.info("***** User is Created ********");
 	}
@@ -62,6 +75,25 @@ public class UserTests2 {
 		response.then().log().all();
 
 		Assert.assertEquals(response.getStatusCode(), 200);
+		
+		 // Assert additional details in the response body
+        int idFromResponse = response.jsonPath().getInt("id");
+        String usernameFromResponse = response.jsonPath().getString("username");
+        String firstNameFromResponse = response.jsonPath().getString("firstName");
+        String lastNameFromResponse = response.jsonPath().getString("lastName");
+        String emailFromResponse = response.jsonPath().getString("email");
+        String phoneFromResponse = response.jsonPath().getString("phone");
+        int userStatusFromResponse = response.jsonPath().getInt("userStatus");
+
+        // Add assertions for each field
+        Assert.assertNotNull(idFromResponse, "User ID is null");
+        Assert.assertTrue(idFromResponse > 0, "User ID is not greater than 0");
+        Assert.assertEquals(usernameFromResponse, userPayload.getUsername(), "Incorrect username");
+        Assert.assertEquals(firstNameFromResponse, userPayload.getFirstName(), "Incorrect first name");
+        Assert.assertEquals(lastNameFromResponse, userPayload.getLastName(), "Incorrect last name");
+        Assert.assertEquals(emailFromResponse, userPayload.getEmail(), "Incorrect email");
+        Assert.assertEquals(phoneFromResponse, userPayload.getPhone(), "Incorrect phone");
+        Assert.assertEquals(userStatusFromResponse, 0, "Incorrect user status");
 
 		logger.info("***** User info is displayed ******");
 	}
@@ -87,6 +119,16 @@ public class UserTests2 {
 		Response responseAfterUpdate = UserEndPoints2.readUser(this.userPayload.getUsername());
 		Assert.assertEquals(responseAfterUpdate.getStatusCode(), 200);
 
+		 // Assert updated data
+        String firstNameAfterUpdate = responseAfterUpdate.jsonPath().getString("firstName");
+        String lastNameAfterUpdate = responseAfterUpdate.jsonPath().getString("lastName");
+        String emailAfterUpdate = responseAfterUpdate.jsonPath().getString("email");
+
+        Assert.assertEquals(firstNameAfterUpdate, userPayload.getFirstName(), "Incorrect first name after update");
+        Assert.assertEquals(lastNameAfterUpdate, userPayload.getLastName(), "Incorrect last name after update");
+        Assert.assertEquals(emailAfterUpdate, userPayload.getEmail(), "Incorrect email after update");
+
+		
 		logger.info("***** User Updated ******");
 	}
 
@@ -98,6 +140,10 @@ public class UserTests2 {
 		Response response = UserEndPoints2.deleteUser(this.userPayload.getUsername());
 		response.then().statusCode(200);
 
+		 // Verify that the user does not exist after deletion
+        Response responseAfterDelete = UserEndPoints2.readUser(this.userPayload.getUsername());
+        Assert.assertEquals(responseAfterDelete.getStatusCode(), 404, "User still exists after deletion");
+		
 		logger.info("***** User Deleted ******");
 	}
 }
