@@ -3,6 +3,7 @@ package api.test;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -17,6 +18,7 @@ public class UserTests2 {
 
 	Faker faker;
 	User userPayload;
+	 private String environment;
 
 	public Logger logger;
 
@@ -39,6 +41,15 @@ public class UserTests2 {
 		logger = org.apache.logging.log4j.LogManager.getLogger(this.getClass());
 
 	}
+	
+	
+
+	    @BeforeClass
+	    @Parameters("env")
+	    public void setUp(String env) {
+	        this.environment = env;
+	        // Use the 'environment' variable in your setup logic
+	    }
 
 	@Test(priority = 1)
 	public void testPostUser() {
