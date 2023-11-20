@@ -5,13 +5,18 @@
     <listener class-name="api.utilities.ExtentReportManager"/>
   </listeners>
   <test thread-count="5" name="PetTests(failed)">
+    <parameter name="env" value="${env}"/>
     <classes>
-      <class name="api.test.UserTests2">
+      <class name="api.test.UserTests3">
         <methods>
-          <include name="setup"/>
+          <include name="testGetUserByName"/>
+          <include name="testUpdateUserByName"/>
           <include name="testPostUser"/>
+          <include name="setUp"/>
+          <include name="setup"/>
+          <include name="testDeleteUser"/>
         </methods>
-      </class> <!-- api.test.UserTests2 -->
+      </class> <!-- api.test.UserTests3 -->
     </classes>
   </test> <!-- PetTests(failed) -->
 </suite> <!-- Failed suite [PetSuite] -->

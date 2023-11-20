@@ -10,7 +10,7 @@
 	   <parameter name="env" value="${env}" />
     <classes>
      <!-- <class name="api.test.UserTests"/> -->
-      <class name="api.test.UserTests2"/>
+      <class name="api.test.UserTests3"/>
     <!--  <class name="api.test.DDTests"/> -->
     </classes>
   </test> <!-- PetTests -->

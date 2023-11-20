@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-20T23:19:46 PKT" name="PetSuite" finished-at="2023-11-20T23:19:56 PKT" duration-ms="10143">
+  <suite started-at="2023-11-21T00:17:19 PKT" name="PetSuite" finished-at="2023-11-21T00:17:30 PKT" duration-ms="11074">
     <groups>
     </groups>
-    <test started-at="2023-11-20T23:19:46 PKT" name="PetTests" finished-at="2023-11-20T23:19:56 PKT" duration-ms="10143">
-      <class name="api.test.UserTests2">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:46 PKT" name="setUp" finished-at="2023-11-20T23:19:46 PKT" duration-ms="8" status="PASS">
+    <test started-at="2023-11-21T00:17:19 PKT" name="PetTests" finished-at="2023-11-21T00:17:30 PKT" duration-ms="11074">
+      <class name="api.test.UserTests3">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:api.test.UserTests3@40ef3420]" started-at="2023-11-21T00:17:19 PKT" name="setup" finished-at="2023-11-21T00:17:20 PKT" duration-ms="580" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,28 +17,24 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:46 PKT" name="setup" finished-at="2023-11-20T23:19:47 PKT" duration-ms="586" status="PASS">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testPostUser()[pri:1, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:47 PKT" name="testPostUser" finished-at="2023-11-20T23:19:51 PKT" duration-ms="3828" status="PASS">
+        <test-method signature="testPostUser()[pri:1, instance:api.test.UserTests3@40ef3420]" started-at="2023-11-21T00:17:20 PKT" name="testPostUser" finished-at="2023-11-21T00:17:23 PKT" duration-ms="3471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPostUser -->
-        <test-method signature="testGetUserByName()[pri:2, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:51 PKT" name="testGetUserByName" finished-at="2023-11-20T23:19:52 PKT" duration-ms="1348" status="PASS">
+        <test-method signature="testGetUserByName()[pri:2, instance:api.test.UserTests3@40ef3420]" started-at="2023-11-21T00:17:23 PKT" name="testGetUserByName" finished-at="2023-11-21T00:17:25 PKT" duration-ms="1806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetUserByName -->
-        <test-method signature="testUpdateUserByName()[pri:3, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:52 PKT" name="testUpdateUserByName" finished-at="2023-11-20T23:19:54 PKT" duration-ms="1969" status="PASS">
+        <test-method signature="testUpdateUserByName()[pri:3, instance:api.test.UserTests3@40ef3420]" started-at="2023-11-21T00:17:25 PKT" name="testUpdateUserByName" finished-at="2023-11-21T00:17:28 PKT" duration-ms="2508" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateUserByName -->
-        <test-method signature="testDeleteUser()[pri:4, instance:api.test.UserTests2@402bba4f]" started-at="2023-11-20T23:19:54 PKT" name="testDeleteUser" finished-at="2023-11-20T23:19:56 PKT" duration-ms="2214" status="PASS">
+        <test-method signature="testDeleteUser()[pri:4, instance:api.test.UserTests3@40ef3420]" started-at="2023-11-21T00:17:28 PKT" name="testDeleteUser" finished-at="2023-11-21T00:17:30 PKT" duration-ms="2519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteUser -->
-      </class> <!-- api.test.UserTests2 -->
+      </class> <!-- api.test.UserTests3 -->
     </test> <!-- PetTests -->
   </suite> <!-- PetSuite -->
 </testng-results>
